@@ -1,0 +1,24 @@
+# NLP & embeddings
+nltk==3.7
+spacy==3.8.11
+en_core_web_sm==3.8.0
+sentence-transformers==5.2.0
+transformers==4.57.3
+torch==2.9.1
+
+# PDF handling
+pdfplumber==0.11.8
+pypdf==6.3.0
+
+# Graph & community detection
+networkx==3.4.2
+python-louvain==0.16
+numpy==2.2.6
+scikit-learn==1.7.2
+
+# Tokenizer
+tokenizers==0.22.1
+transformers==4.57.3
+
+# Optional: utilities
+nltk==3.7
