@@ -4,6 +4,16 @@ SEMRAG is a Python-based system that performs semantic retrieval augmented gener
 
 This implementation uses Dr. B.R. Ambedkar’s writings as the example corpus but can be adapted to any PDF-based dataset.
 
+## Why SEMRAG?
+
+Most PDF-based QA systems rely purely on vector similarity, which often fails for:
+- Long documents
+- Conceptually linked sections
+- Avoiding hallucinations
+
+SEMRAG was built to explore how semantic chunking and graph structure can improve retrieval quality and answer grounding in real-world document QA systems.
+
+
 # SEMRAG System WorkFlow
           PDF
            ↓
@@ -28,6 +38,12 @@ This implementation uses Dr. B.R. Ambedkar’s writings as the example corpus bu
            ↓
           Answer
 
+## Design Trade-offs
+
+- Graph-based retrieval improves context coherence but increases preprocessing cost.
+- Community detection helps global context but may miss fine-grained details.
+- Local LLM inference (Ollama) ensures data privacy but limits model choice.
+
 # Hallucination Control
 Ensures answers are grounded in retrieved context; does not hallucinate information not present in the PDF.
 
@@ -44,6 +60,13 @@ Ensures answers are grounded in retrieved context; does not hallucinate informat
 
 Queries unrelated to the PDF (e.g., "What are Ambedkar's views on quantum mechanics?") will return "No relevant information found in the document." ensuring no hallucinations.
 Installation.
+
+## Potential Extensions
+
+- Convert into an API-based service for document QA
+- Add streaming or async inference
+- Plug into a frontend for internal knowledge assistants
+- Extend to multi-document or brand knowledge bases
 
 ## Installation
 
